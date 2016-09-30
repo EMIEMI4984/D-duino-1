@@ -8,8 +8,8 @@
 
 SSD1306  display(0x3c, D1, D2);
 
-const char *ssid = "MOVISTARTL";
-const char *password = "Martin89";
+const char *ssid = "nombreRed";
+const char *password = "Password";
 
 
 ESP8266WebServer server ( 80 );
