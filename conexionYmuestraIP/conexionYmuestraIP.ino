@@ -8,8 +8,8 @@
 
 SSD1306  display(0x3c, D1, D2);
 
-const char *ssid = "nombreRed";
-const char *password = "Password";
+const char *ssid = "MOVISTARTL";
+const char *password = "Martin89";
 
 
 ESP8266WebServer server ( 80 );
@@ -33,15 +33,7 @@ void setup ( void ) {
  Serial.println ( ssid );
  Serial.print ( "IP address: " );
  Serial.println ( WiFi.localIP() );
-
- 
- /*
-  String tempIP =WiFi.localIP().toString(); 
-  char testChar[20];
-  tempIP.toCharArray(testChar,20);
-  display.print(testChar);
-  */
-    display.clear();
+ display.clear();
     
  
  if ( MDNS.begin ( "esp8266" ) ) {
@@ -65,7 +57,7 @@ void loop() {
     display.drawString(30, 30, ssid);
     display.setFont(ArialMT_Plain_10);
     display.drawString(0, 46, "IP:");
-    display.drawString(15, 46, "192.168.1.43");
+    display.drawString(15, 30, WiFi.localIP().toString());
     display.display();
  
 }
